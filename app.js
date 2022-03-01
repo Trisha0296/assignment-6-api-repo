@@ -1,7 +1,5 @@
 const allPhones = () => {
   // document.getElementById('phone-container').innerHTML = " ";
-
-
   const searchValu = document.getElementById('search-box').value;
 
   const url = `https://openapi.programming-hero.com/api/phones?search=${searchValu}`
@@ -11,7 +9,7 @@ const allPhones = () => {
 
   document.getElementById('search-box').value = ' ';
 };
-
+/* carrd-Details */
 const showphoneDetails = (phones) => {
   const parent = document.getElementById('phone-container');
   parent.textContent = ''
@@ -19,24 +17,19 @@ const showphoneDetails = (phones) => {
     const div = document.createElement('div');
     div.innerHTML = `
           <div class="card p-4 text-center ">
-             
-                <img class="img-fluid" src="${phone.image}" alt="">
-             
-              <h5 class='pt-4'>Name : ${phone.phone_name} </h5>
+          <img class="img-fluid w-75 mx-auto" src="${phone.image}" alt="">
+                <h5 class='pt-4'>Name : ${phone.phone_name} </h5>
               <h6>Phone Brand : ${phone.brand} </h6>
-             
-              <div class="py-3">
+               <div class="py-3">
                 <button onclick=" phonedetails ('${phone.slug}')" class="btn btn-dark  text-white roundedss">Explore Details</button>
               </div>
             </div>
    `
-
     parent.appendChild(div)
 
   });
 
 };
-
 /* Explore details */
 const phonedetails = (id) => {
   const url = `https://openapi.programming-hero.com/api/phone/${id}`;
@@ -48,12 +41,12 @@ const phonedetails = (id) => {
 const mainFeatures = (infoDetails) => {
 
   const parent = document.getElementById('details-container')
-  parent.textContent = ''
+  parent.textContent = '';
 
   const div = document.createElement('div');
   div.innerHTML = `
   <div class=" card border p-3 mx-auto my-3 w-50 text-center ">
-  <img class="img-fluid p-3" src="${infoDetails.image}" alt="">
+  <img class="img-fluid p-3 w-50 mx-auto" src="${infoDetails.image}" alt="">
     <p>Released date : ${infoDetails.releaseDate}</p>
     <p>Storage : ${infoDetails.mainFeatures.storage}</p>
     <p>DisplaySize : ${infoDetails.mainFeatures.displaySize}</p>

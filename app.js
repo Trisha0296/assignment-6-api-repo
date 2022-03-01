@@ -6,7 +6,9 @@ const allPhones = () => {
   fetch(url)
     .then(response => response.json())
     .then((data) => showphoneDetails(data.data));
-}
+
+};
+
 const showphoneDetails = (phones) => {
 
   for (const phone of phones) {
@@ -25,12 +27,12 @@ const showphoneDetails = (phones) => {
             </div>
           </div>
  `
+
     parent.appendChild(div);
     // console.log(phone);
 
   }
 };
-searchValu.value = " ";
 
 /* Explore details */
 const phonedetails = (id) => {
@@ -42,8 +44,9 @@ const phonedetails = (id) => {
 /*  Explore details call*/
 const mainFeatures = (infoDetails) => {
   // console.log(infoDetails)
+
   document.getElementById('details-container').innerHTML = `
-  <div class="cards card border">
+  <div class="cardsDetails card border">
   <img class="p-10" src="${infoDetails.image}" alt="">
     <p>Released date : ${infoDetails.releaseDate}</p>
     <p>Storage : ${infoDetails.mainFeatures.storage}</p>

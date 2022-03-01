@@ -1,4 +1,5 @@
 const allPhones = () => {
+  document.getElementById('phone-container').innerHTML = " ";
   const searchValu = document.getElementById('search-box').value;
   const url = `https://openapi.programming-hero.com/api/phones?search=${searchValu}`
   // console.log(url)
@@ -26,9 +27,11 @@ const showphoneDetails = (phones) => {
  `
     parent.appendChild(div);
     // console.log(phone);
-  }
 
-}
+  }
+};
+searchValu.value = " ";
+
 /* Explore details */
 const phonedetails = (id) => {
   const url = ` https://openapi.programming-hero.com/api/phone/${id}`;
@@ -41,15 +44,13 @@ const mainFeatures = (infoDetails) => {
   // console.log(infoDetails)
   document.getElementById('details-container').innerHTML = `
   <div class="cards card border">
-  <img src="${infoDetails.image}" alt="">
+  <img class="p-10" src="${infoDetails.image}" alt="">
     <p>Released date : ${infoDetails.releaseDate}</p>
-    <p>Storage : ${infoDetails.storage}</p>
-    <p>DisplaySize : ${infoDetails.displaySize}</p>
-    <p>ChipSet : ${infoDetails.chipSet}</p>
-    <p>memory : ${infoDetails.memory}</p>
-    <p>released date : ${infoDetails.releaseDate}</p>
-    <a href="#">See more</a>
+    <p>Storage : ${infoDetails.mainFeatures.storage}</p>
+    <p>DisplaySize : ${infoDetails.mainFeatures.displaySize}</p>
+    <p>ChipSet : ${infoDetails.mainFeatures.chipSet}</p>
+    <p>Memory : ${infoDetails.mainFeatures.memory}</p>
+    <a href="https://dnr.wisconsin.gov/topic/hunt/wildwiapp.html">See more</a>
   </div>
-
-  `
+ `
 }

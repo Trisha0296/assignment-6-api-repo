@@ -5,7 +5,6 @@ const allPlayers = () => {
   fetch(url)
     .then(response => response.json())
     .then((data) => showphoneDetails(data.data));
-  /* iPhone 12 */
 }
 const showphoneDetails = (phones) => {
 
@@ -15,17 +14,18 @@ const showphoneDetails = (phones) => {
     div.innerHTML = `
   <div class="cards card border">
             <div class="pro-pick">
-              <img class="w-25" src="" alt="">
+              <img class="w-30 m-10" src="${phone.image}" alt="">
             </div>
-            <h2>Name : heloo </h2>
-            <h2>Phone Brand : </h2>
+            <h2>Name : ${phone.phone_name} </h2>
+            <h4>Phone Brand :${phone.brand} </h4>
+            <p>Phone slug :  ${phone.slug} </p>
             <div class="button">
               <button class="btn btn-dark  text-white roundedss">Explore</button>
             </div>
           </div>
-
  `
     parent.appendChild(div);
+    // console.log(phone)
   }
 
 }

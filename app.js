@@ -9,7 +9,7 @@ const allPhones = () => {
     .then(response => response.json())
     .then((data) => showphoneDetails(data.data.slice(0, 20)));
 
-  document.getElementById('search-box').value = ''
+  document.getElementById('search-box').value = ' ';
 };
 
 const showphoneDetails = (phones) => {
@@ -52,8 +52,8 @@ const mainFeatures = (infoDetails) => {
 
   const div = document.createElement('div');
   div.innerHTML = `
-  <div class=" card border p-3 mx-auto my-3 w-50">
-  <img class="img-fluid" src="${infoDetails.image}" alt="">
+  <div class=" card border p-3 mx-auto my-3 w-50 text-center ">
+  <img class="img-fluid p-3" src="${infoDetails.image}" alt="">
     <p>Released date : ${infoDetails.releaseDate}</p>
     <p>Storage : ${infoDetails.mainFeatures.storage}</p>
     <p>DisplaySize : ${infoDetails.mainFeatures.displaySize}</p>

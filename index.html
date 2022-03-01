@@ -15,35 +15,34 @@
 </head>
 
 <body>
-  <h1 class="heading-tag">PRODUCT HUNT</h1>
+  <h1 class="text-center py-4 bold">PRODUCT HUNT</h1>
 
-  <div class="container m-auto w-100 mt-100">
-    <div class="row m-auto w-100">
-      <div class="col-lg-6 col-sm-3">
+  <div class="input-group mb-4 w-50 mx-auto">
+    <input id="search-box" type="text" class="form-control" placeholder="Product's name"
+      aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+      <button onclick="allPhones()" id="search-btn" class="btn btn-dark  text-white rounded"
+        type="button">Search</button>
+    </div>
+  </div>
 
-        <div class="input-group mb-3 ">
-          <input id="search-box" type="text" class="form-control" placeholder="Product's name"
-            aria-label="Recipient's username" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button onclick="allPhones()" id="search-btn" class="btn btn-dark  text-white rounded"
-              type="button">Search</button>
-          </div>
-        </div>
-        <!-- phone card -->
-        <div class="phone-container" id="phone-container">
-
-        </div>
-
-      </div>
-      <!--phone Details -->
-      <div class="col-lg-6 col-sm-3 ">
-        <div id="details-container" class="details-container">
-
-        </div>
-      </div>
+  <!--phone Details -->
+  <div class=" container ">
+    <div id="details-container">
 
     </div>
   </div>
+
+
+  <!-- phone card -->
+  <div class="container">
+    <div class=" row row-cols-lg-3 g-4" id="phone-container">
+
+    </div>
+  </div>
+
+
+
 
   <!-- script-link -->
   <script src="app.js"></script>
